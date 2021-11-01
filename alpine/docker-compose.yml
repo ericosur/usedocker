@@ -1,0 +1,30 @@
+  myapp:
+    image: alpine
+    container_name: alpine-test
+    hostname: alpine
+
+    #user: "${UID}:${GID}"
+    user: "1000:1000"
+    
+    #stdin_open: true
+    #tty: true
+
+    # ports:
+    #   - 3080:80
+    #   - 3443:443
+
+    volumes:
+      - /home/rasmus:/home/rasmus
+    working_dir: /home/rasmus
+
+    command: ash -l
+    #restart: always
+
+## how to run
+#
+# docker-compose up ; sleep 1 ; docker-compose run --rm myapp
+#
+## and get into interactive shell
+#
+# https://dev.to/acro5piano/specifying-user-and-group-in-docker-i2e
+#
