@@ -1,0 +1,33 @@
+  myapp:
+    image: jess/imagemagick
+    container_name: jess-magick
+    hostname: jessmagick
+
+    #user: "${UID}:${GID}"
+    user: "1000:1000"
+    
+    #stdin_open: true
+    #tty: true
+
+    # ports:
+    #   - 3080:80
+    #   - 3443:443
+
+    volumes:
+      - ${HOME}:${HOME}
+
+    # It will go into bash, for this container, it may be
+    # __magick__, so I override it.
+    entrypoint: sh
+    #command: /bin/bash
+
+    working_dir: ${HOME}
+    environment:
+      - USER=magick
+
+## how to run
+## and get into interactive shell
+#
+# docker-compose -f jess-imagick.yml up ; sleep 1 ; \
+# docker-compose run --rm myapp
+#

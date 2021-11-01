@@ -1,0 +1,41 @@
+# docker-compose.yml
+#
+# ## how to run
+# docker-compose up
+#
+# ## get into interactive shell
+#
+# docker-compose run --rm ffmpeg
+# docker-compose run --rm magick
+#
+#
+# ## shutdown
+# docker-compose down
+#
+
+  ffmpeg:
+    image: jrottenberg/ffmpeg
+    container_name: ffmpeg-test
+    hostname: ffmpeg
+    user: "1000:1000"
+    volumes:
+      - /home/rasmus:/home/rasmus
+    working_dir: /home/rasmus
+    entrypoint: bash
+
+  magick:
+    image: dpokidov/imagemagick
+    container_name: image-magick
+    hostname: magick
+    user: "1000:1000"
+    volumes:
+      - ${HOME}:${HOME}
+
+    # It will go into bash, for this container, it may be
+    # __magick__, so I override it.
+    entrypoint: /bin/bash
+    #command: /bin/bash
+
+    working_dir: ${HOME}
+    environment:
+      - USER=magick
