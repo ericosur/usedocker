@@ -5,6 +5,6 @@
 
 DOCKER_IMAGE=busybox
 
-sudo docker run -ti --rm \
+docker run -ti --rm \
     ${DOCKER_IMAGE}
 

@@ -8,7 +8,7 @@ MYGID=$(id -g)
 DOCKER_IMAGE=busybox
 WORKSPACE=/work
 
-sudo docker run -ti --rm \
+docker run -ti --rm \
     -u ${MYUID}:${MYUID}  \
     -v $PWD:${WORKSPACE} \
     -w ${WORKSPACE} \

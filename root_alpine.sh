@@ -11,7 +11,7 @@ docker run -ti  \
     ${DOCKER_IMAGE} \
     ash -l
 
-PSID=$(sudo docker ps -a | \grep ${DOCKER_IMAGE} | cut -d ' ' -f 1)
+PSID=$(docker ps -a | \grep ${DOCKER_IMAGE} | cut -d ' ' -f 1)
 
 echo "NOTE: container process still exists... ${PSID}"
 echo

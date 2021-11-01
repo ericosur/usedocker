@@ -11,7 +11,7 @@ fi
 
 # gmacario/build-yocto
 #
-sudo docker run -ti --rm \
+docker run -ti --rm \
     -v $VOLCIS005 \
     -v $VOL2 -v $VOL3 \
     -v $MYQT \

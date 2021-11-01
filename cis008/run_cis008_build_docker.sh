@@ -12,7 +12,7 @@ if [ "$HOSTNAME" == "kitty" ] ; then
 fi
 
 
-sudo docker run -ti \
+docker run -ti \
     -v $VOLCIS008 \
     -v $VOLCIS005 \
     -v $VOL2 -v $VOL3 \

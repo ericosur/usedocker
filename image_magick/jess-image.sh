@@ -12,7 +12,7 @@ VOLS="-v $PWD:/images -v $HOME/Pictures:/Pictures \
 if [ "$*" == "" ]; then
 
     echo "start ash..."
-    sudo docker run -ti --rm \
+    docker run -ti --rm \
         -u ${MYUID}:${MYUID}  \
         ${VOLS} \
         -w /images \
@@ -21,7 +21,7 @@ if [ "$*" == "" ]; then
 else
 
     echo $*
-    sudo docker run -ti --rm \
+    docker run -ti --rm \
         -u ${MYUID}:${MYUID}  \
         ${VOLS} \
         -w /images \
