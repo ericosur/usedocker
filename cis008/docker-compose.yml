@@ -1,0 +1,32 @@
+#
+## how to run
+#
+# docker-compose up
+# docker run --rm myapp
+## and get into interactive shell
+#
+
+  myapp:
+    image: ericosur/buildyocto:latest
+    container_name: cis008-docker
+    hostname: cis008
+
+    # links:
+    #   - mariadb:3pl_db
+
+    # ports:
+    #   - 3080:80
+    #   - 3443:443
+
+    volumes:
+      - /home/rasmus/bin:/home/jenkins/bin
+      - /src/ericosur-snippet:/src/snippet
+      - /src/myqt:/src/myqt:rw
+      - /sg8/cis008:/ssd/cis008:rw
+
+    working_dir: /ssd/cis008
+    command: /bin/bash
+    #restart: always
+    environment:
+      - LANG=en_US.UTF-8
+
