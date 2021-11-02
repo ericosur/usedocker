@@ -14,8 +14,8 @@
     #   - 3443:443
 
     volumes:
-      - /home/rasmus:/home/rasmus
-    working_dir: /home/rasmus
+      - ${HOME}:${HOME}
+    working_dir: ${HOME}
 
     command: /bin/bash
     #restart: always
