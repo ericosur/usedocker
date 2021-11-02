@@ -9,14 +9,15 @@
     #stdin_open: true
     #tty: true
 
-    # ports:
-    #   - 3080:80
-    #   - 3443:443
-
+    # mount the most disk partition
     volumes:
-      - /home/rasmus:/home/rasmus
-    working_dir: /home/rasmus
+      - ${HOME}:${HOME}
+      - /ssd:/ssd
+      - /bs2:/bs2
+      - /sg8:/sg8
+    working_dir: /sg8/Videos
 
+    # override it and use bash to work
     entrypoint: bash
     #command: bash
     #restart: always
