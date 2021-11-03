@@ -1,5 +1,7 @@
 # docker-compose.yml
 #
+# example file
+#
 # ## how to run
 # docker-compose up
 #
@@ -19,9 +21,11 @@
     hostname: ffmpeg
     user: "1000:1000"
     volumes:
-      - /home/rasmus:/home/rasmus
-    working_dir: /home/rasmus
+      - ${HOME}:${HOME}
+
+    working_dir: ${HOME}
     entrypoint: bash
+
 
   magick:
     image: dpokidov/imagemagick
@@ -35,7 +39,8 @@
     # __magick__, so I override it.
     entrypoint: /bin/bash
     #command: /bin/bash
-
+    volumes:
+      - ${HOME}:${HOME}
     working_dir: ${HOME}
     environment:
       - USER=magick

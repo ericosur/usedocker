@@ -7,6 +7,9 @@
 # the redis server
 #
 
-# -d (daemon mode)
-docker-compose up -d
+# only start the server, will not get into the shell of container
+docker run \
+    -p 6379:6379 \
+    --name redis-redisjson \
+    redislabs/rejson:latest
 
