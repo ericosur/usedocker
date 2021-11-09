@@ -1,0 +1,20 @@
+# copy from m16, mount volumes are changed for local use
+  mariadb:
+    image: mariadb:latest
+    container_name: 3pl-mariadb
+    hostname: 3pl-mariadb
+
+    ports:
+      - 3306:3306
+      - 4567:4567
+
+    volumes:
+      - ${HOME}/usedocker/mariadb/3pl/mysql:/var/lib/mysql
+      - ${HOME}/usedocker/mariadb/3pl/dbconf:/etc/mysql/conf.d
+
+    #entrypoint: bash
+
+    environment:
+      - MYSQL_ROOT_PASSWORD=pega#1234
+
+    restart: always
