@@ -3,12 +3,6 @@
     container_name: redis-redisjson
     hostname: redis
 
-    #user: "${UID}:${GID}"
-    #user: "1000:1000"
-    
-    #stdin_open: true
-    #tty: true
-
     ports:
       - 6379:6379
 
@@ -22,7 +16,7 @@
 
 ## how to run
 #
-# docker-compose up ; sleep 1 ;
+# docker-compose up -d ; sleep 1 ;
 # docker-compose run --rm rejson
 #
 ## and get into interactive shell
@@ -30,5 +24,4 @@
 # https://dev.to/acro5piano/specifying-user-and-group-in-docker-i2e
 #
 # docker-entrypoint.sh
-#
 #
