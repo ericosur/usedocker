@@ -17,3 +17,14 @@ docker-compose run --rm ffmpeg
 docker-compose run --rm magick
 docker-compose down
 ```
+
+## docker
+
+how to attach a running docker container and get into shell?
+```
+docker exec -it mariadb /bin/bash
+```
+
+## mysqldump
+
+https://www.digitalocean.com/community/tutorials/how-to-import-and-export-databases-in-mysql-or-mariadb
