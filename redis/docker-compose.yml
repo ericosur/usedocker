@@ -1,0 +1,31 @@
+  redis:
+    image: redis:latest
+    container_name: redis-server
+    hostname: redis
+
+    ports:
+      - 6379:6379
+
+    volumes:
+      - ${HOME}/usedocker/redis/conf:/conf
+      - ${HOME}/usedocker/redis/data:/data
+
+    #command: redis-server /conf/redis.conf --requirepass "123456"
+    #--requirepass "foobar1975"
+    #entrypoint: docker-entrypoint.sh /conf/redis.conf
+    restart: always
+
+    # environment:
+    #   - REDIS_PASSWORD=foobar2000
+
+## how to run
+#
+# docker-compose up -d
+# docker exec -ti redis-server bash
+#
+## and get into interactive shell
+#
+# https://dev.to/acro5piano/specifying-user-and-group-in-docker-i2e
+#
+# docker-entrypoint.sh
+#
