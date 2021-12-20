@@ -15,7 +15,9 @@ Use docker-compose
 
 ### how to run
 
+Use ```start.sh``` for the following case.
+
 ```
-docker-compose up ; sleep 1 ; docker-compose run --rm myapp
+docker-compose up ; sleep 1 ; docker-compose run --rm magick
 ```
 and get into interactive shell
