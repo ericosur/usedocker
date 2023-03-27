@@ -28,3 +28,16 @@ docker exec -it mariadb /bin/bash
 ## mysqldump
 
 https://www.digitalocean.com/community/tutorials/how-to-import-and-export-databases-in-mysql-or-mariadb
+
+
+## docker save/load
+
+```
+docker save -o zebra-build-v2.tar zebra:v2
+
+docker save myimage:latest | gzip > myimage_latest.tar.gz
+
+docker lodad < abc.tar.gz
+
+```
+
